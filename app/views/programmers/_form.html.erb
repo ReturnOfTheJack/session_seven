@@ -1,0 +1,32 @@
+<%= form_for(programmer) do |f| %>
+  <% if programmer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(programmer.errors.count, "error") %> prohibited this programmer from being saved:</h2>
+
+      <ul>
+      <% programmer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Firstname %>
+    <%= f.text_field :Firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Lastname %>
+    <%= f.text_field :Lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Specialty %>
+    <%= f.text_field :Specialty %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
